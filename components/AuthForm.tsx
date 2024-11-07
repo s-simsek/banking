@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input"
 import CustomInput from './CustomInput'
 import { authformSchema } from '@/lib/utils'
 import { signIn, signUp, getLoggedInUser } from '@/lib/actions/user.actions'
+import PlaidLink from './PlaidLink'
 
 
 const AuthForm = ({type}: {type: string}) => {
@@ -105,7 +106,7 @@ const AuthForm = ({type}: {type: string}) => {
       </header>
       {user ? (
         <div className='flex flex-col gap-4'>
-            {/* Plaid Link */}
+            <PlaidLink user={user} variant='primary' />
         </div>
       ): (
         <>
@@ -157,7 +158,7 @@ const AuthForm = ({type}: {type: string}) => {
                 </Link>
             </footer>
         </>
-      )}
+      )} 
     </section>
   )
 }
